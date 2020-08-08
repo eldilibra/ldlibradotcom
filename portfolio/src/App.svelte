@@ -14,7 +14,7 @@
 	<nav>
 		<div>
 			<div>Motion for Justice</div>
-			<div>April 4 - May 18</div>
+			<div>202.82 hours spanning March 15 - July 22</div>
 		</div>
 		<div>
 			<div>CPI</div>
@@ -28,20 +28,22 @@
 	<section>
 		<section>
 			<div class="project-title-and-timespan">
-				<div>Motion for Justice</div>
-				<div>April 4 - May 18</div>
+				<h3>Motion for Justice</h3>
+				<div>202.82 hours, March 15 - July 22</div>
 			</div>
 			<div class="client">
 				<h2><sup>THE</sup>CLIENT</h2>
-				<p></p>
+				<p>Vera Institute of Justice & Institute for Innovation in Prosecution. I freelanced for Hyperakt, which had the client relationship (https://www.hyperakt.com). </p>
 			</div>      
 			<div class="team">
 				<h2><sup>THE</sup>TEAM</h2>
-				<p></p>
+				<p>Hyperakt supplied the project manager, designer, and hosting. I supplied the fullstack web development.</p>
 			</div>      
 			<div class="work">
 				<h2><sup>THE</sup>WORK</h2>
-				<p></p>
+				<p>This project aims to equip prosecutors in the U.S. to challenge the racial inequities in the criminal justice system. Rich imagery, long-form historical context and action steps come together to create a nuanced narrative.</p>
+				<p>CraftCMS (and its wonderful GraphQL API) is used to structure and edit the content. The frontend is a React SPA served by a lightweight Node.js server.</p>
+				<p>The defining abstractions for this site were the handling of slide-out informational panels, which for a given Craft entry, draw content from nested entries in Craft, as well as mobile-first CSS approach to make sure the various content blocks were re-used across pages. Animations powered by react-spring. Network IO made easy by Apollo.</p>
 			</div>      
 		</section>
 		<section>
@@ -89,6 +91,10 @@
 
 	section {
 		width: 100%;
+	}
+
+	.project-title-and-timespan, .client, .team, .work {
+		padding-right: 1em;
 	}
 
 	.project-title-and-timespan {
