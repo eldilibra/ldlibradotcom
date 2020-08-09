@@ -47,7 +47,8 @@
 				<p>The defining abstractions for this site were the handling of slide-out informational panels, which for a given Craft entry, draw content from nested entries below it, as well as a mobile-first CSS approach that made sure the various content blocks were re-used across pages. Animations powered by react-spring. Network IO made easy by Apollo.</p>
 			</div>      
 		</section>
-		<section>
+		<section class="screens">
+			<h2><sup>THE</sup>SCREENS</h2>
 			<div>
 				<img src="/assets/images/motionforjustice-desktop.png" alt="Screenshot of Motion for Justice site on desktop." />
 				<img src="/assets/images/motionforjustice-tablet.png" alt="Screenshot of Motion for Justice site on tablet." />
@@ -57,7 +58,7 @@
 		<section>
 			<div class="project-title-and-timespan">
 				<h3>CPI Candidate Application</h3>
-				<div>MS 1: April 20 - June 1, MS 2: June 24 - August 3</div>
+				<div>April 20 - June 1, June 24 - August 3</div>
 			</div>
 			<div class="client">
 				<h2><sup>THE</sup>CLIENT</h2>
@@ -79,7 +80,8 @@
 				<p>In the works...</p>
 			</div>      
 		</section>
-		<section>
+		<section class="screens">
+			<h2><sup>THE</sup>SCREENS</h2>
 			<div>
 				<img src="/assets/images/cpi-desktop.png" alt="Screenshot of CPI Candidate App on desktop." />
 				<img src="/assets/images/cpi-tablet.png" alt="Screenshot of CPI Candidate App site on tablet." />
@@ -112,7 +114,8 @@
 				<p>In the works...</p>
 			</div>      
 		</section>
-		<section>
+		<section class="screens">
+			<h2><sup>THE</sup>SCREENS</h2>
 			<div>
 				<img src="/assets/images/zeroplace-desktop.png" alt="Screenshot of ZeroPlace tenant dashboard on desktop." />
 				<img src="/assets/images/zeroplace-tablet.png" alt="Screenshot of ZeroPlace tenant dashboard on tablet." />
@@ -181,6 +184,10 @@
 
 	.work {
 		border-right: solid 6.5em fuchsia;
+	}
+
+	section.screens {
+		margin-bottom: 5em
 	}
 
 	img:first-child {
