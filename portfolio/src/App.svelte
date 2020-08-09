@@ -81,9 +81,9 @@
 		</section>
 		<section>
 			<div>
-				<img src="/assets/images/motionforjustice-desktop.png" alt="Screenshot of Motion for Justice site on desktop." />
-				<img src="/assets/images/motionforjustice-tablet.png" alt="Screenshot of Motion for Justice site on tablet." />
-				<img src="/assets/images/motionforjustice-mobile.png" alt="Screenshot of Motion for Justice site on mobile." />
+				<img src="/assets/images/cpi-desktop.png" alt="Screenshot of CPI Candidate App on desktop." />
+				<img src="/assets/images/cpi-tablet.png" alt="Screenshot of CPI Candidate App site on tablet." />
+				<img src="/assets/images/cpi-mobile.png" alt="Screenshot of CPI Candidate App site on mobile." />
 			</div>
 		</section>
 		<section>
