@@ -14,19 +14,19 @@
 	<nav>
 		<div>
 			<div>Motion for Justice</div>
-			<div>202.82 hours spanning March 15 - July 22</div>
+			<div>202.82 hours, March 15 - July 22</div>
 		</div>
 		<div>
 			<div>CPI</div>
-			<div>April 4 - May 18</div>
+			<div>April 20 - June 1, June 24 - August 3</div>
 		</div>
 		<div>
 			<div>ZeroPlace</div>
-			<div>April 4 - May 18</div>
+			<div>June 1 - July 1</div>
 		</div>
 	</nav>
-	<section>
-		<section>
+	<section class="content">
+		<section class="project-summary">
 			<div class="project-title-and-timespan">
 				<h3>Motion for Justice</h3>
 				<div>202.82 hours, March 15 - July 22</div>
@@ -55,7 +55,7 @@
 				<img src="/assets/images/motionforjustice-mobile.png" alt="Screenshot of Motion for Justice site on mobile." />
 			</div>
 		</section>
-		<section>
+		<section class="project-summary">
 			<div class="project-title-and-timespan">
 				<h3>CPI Candidate Application</h3>
 				<div>April 20 - June 1, June 24 - August 3</div>
@@ -88,10 +88,10 @@
 				<img src="/assets/images/cpi-mobile.png" alt="Screenshot of CPI Candidate App site on mobile." />
 			</div>
 		</section>
-		<section>
+		<section class="project-summary">
 			<div class="project-title-and-timespan">
 				<h3>ZeroPlace Energy Monitor</h3>
-				<div>MS 1: June 1 - July 1</div>
+				<div>June 1 - July 1</div>
 			</div>
 			<div class="client">
 				<h2><sup>THE</sup>CLIENT</h2>
@@ -156,6 +156,7 @@
 
 	nav {
 		display: none;
+		flex-direction: column;
 	}
 
 	section {
@@ -200,5 +201,36 @@
 
 	img:nth-child(3) {
 		max-width: 25%;
+	}
+
+	@media screen and (min-width: 1200px) {
+		header {
+			flex-direction: row-reverse;
+		}
+
+		nav {
+			display: flex;
+		}
+
+		.contact-info {
+			padding-right: 2em;
+		}
+
+		.project-title-and-timespan {
+			display: none;
+		}
+
+		.content {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.project-summary, .screens {
+			width: 45%;
+		}
+
+		.project-summary {
+			margin-right: 5%;
+		}
 	}
 </style>
