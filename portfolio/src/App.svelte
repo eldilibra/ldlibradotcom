@@ -1,4 +1,27 @@
 <script>
+	import { onMount } from "svelte"
+
+	let activeSectionId = "motion-for-justice"
+
+	onMount(() => {
+		const callback = function(entries) {
+			let intersecting = entries.filter(e => e.isIntersecting)
+			
+			if (intersecting.length) {
+				activeSectionId = intersecting.slice(-1)[0].target.id
+			}
+		}
+
+		const observer = new IntersectionObserver(callback, {
+			root: document.querySelector(".content"),
+			threshold: 0.5
+		})
+
+		const targets = document.querySelectorAll(".project-summary");
+		targets.forEach(function(target) {
+			observer.observe(target)
+		})
+	})
 </script>
 
 <header>
@@ -12,24 +35,24 @@
 </header>
 <main>
 	<nav>
-		<div>
-			<div>Motion for Justice</div>
-			<div>202.82 hours, March 15 - July 22</div>
-		</div>
-		<div>
-			<div>CPI</div>
-			<div>April 20 - June 1, June 24 - August 3</div>
-		</div>
-		<div>
-			<div>ZeroPlace</div>
-			<div>June 1 - July 1</div>
-		</div>
+		<a class="nav-link" class:active="{activeSectionId === 'motion-for-justice'}" href="#motion-for-justice">
+			<h3>Motion for Justice</h3>
+			<div>202.82 hours, 3/15 - 7/22</div>
+		</a>
+		<a class="nav-link" class:active="{activeSectionId === 'cpi'}" href="#cpi">
+			<h3>CPI Candidate App</h3>
+			<div>4/20 - 6/1, 6/24 - 8/3</div>
+		</a>
+		<a class="nav-link" class:active="{activeSectionId === 'zeroplace'}" href="#zeroplace">
+			<h3>ZeroPlace</h3>
+			<div>6/1 - 7/1</div>
+		</a>
 	</nav>
 	<section class="content">
-		<section class="project-summary">
+		<section id="motion-for-justice" class="project-summary">
 			<div class="project-title-and-timespan">
 				<h3>Motion for Justice</h3>
-				<div>202.82 hours, March 15 - July 22</div>
+				<div>202.82 hours, 3/15 - 7/22</div>
 			</div>
 			<div class="client">
 				<h2><sup>THE</sup>CLIENT</h2>
@@ -49,16 +72,16 @@
 		</section>
 		<section class="screens">
 			<h2><sup>THE</sup>SCREENS</h2>
-			<div>
-				<img src="/assets/images/motionforjustice-desktop.png" alt="Screenshot of Motion for Justice site on desktop." />
-				<img src="/assets/images/motionforjustice-tablet.png" alt="Screenshot of Motion for Justice site on tablet." />
-				<img src="/assets/images/motionforjustice-mobile.png" alt="Screenshot of Motion for Justice site on mobile." />
+			<div class="images-wrapper">
+				<img class="desktop" src="/assets/images/motionforjustice-desktop.png" alt="Screenshot of Motion for Justice site on desktop." />
+				<img class="tablet" src="/assets/images/motionforjustice-tablet.png" alt="Screenshot of Motion for Justice site on tablet." />
+				<img class="mobile" src="/assets/images/motionforjustice-mobile.png" alt="Screenshot of Motion for Justice site on mobile." />
 			</div>
 		</section>
-		<section class="project-summary">
+		<section id="cpi" class="project-summary">
 			<div class="project-title-and-timespan">
-				<h3>CPI Candidate Application</h3>
-				<div>April 20 - June 1, June 24 - August 3</div>
+				<h3>CPI Candidate App</h3>
+				<div>4/20 - 6/1, 6/24 - 8/3</div>
 			</div>
 			<div class="client">
 				<h2><sup>THE</sup>CLIENT</h2>
@@ -82,16 +105,16 @@
 		</section>
 		<section class="screens">
 			<h2><sup>THE</sup>SCREENS</h2>
-			<div>
-				<img src="/assets/images/cpi-desktop.png" alt="Screenshot of CPI Candidate App on desktop." />
-				<img src="/assets/images/cpi-tablet.png" alt="Screenshot of CPI Candidate App site on tablet." />
-				<img src="/assets/images/cpi-mobile.png" alt="Screenshot of CPI Candidate App site on mobile." />
+			<div class="images-wrapper">
+				<img class="desktop" src="/assets/images/cpi-desktop.png" alt="Screenshot of CPI Candidate App on desktop." />
+				<img class="tablet"src="/assets/images/cpi-tablet.png" alt="Screenshot of CPI Candidate App site on tablet." />
+				<img class="mobile"src="/assets/images/cpi-mobile.png" alt="Screenshot of CPI Candidate App site on mobile." />
 			</div>
 		</section>
-		<section class="project-summary">
+		<section id="zeroplace" class="project-summary">
 			<div class="project-title-and-timespan">
 				<h3>ZeroPlace Energy Monitor</h3>
-				<div>June 1 - July 1</div>
+				<div>6/1 - 7/1</div>
 			</div>
 			<div class="client">
 				<h2><sup>THE</sup>CLIENT</h2>
@@ -116,10 +139,10 @@
 		</section>
 		<section class="screens">
 			<h2><sup>THE</sup>SCREENS</h2>
-			<div>
-				<img src="/assets/images/zeroplace-desktop.png" alt="Screenshot of ZeroPlace tenant dashboard on desktop." />
-				<img src="/assets/images/zeroplace-tablet.png" alt="Screenshot of ZeroPlace tenant dashboard on tablet." />
-				<img src="/assets/images/zeroplace-mobile.png" alt="Screenshot of ZeroPlace tenant dashboard on mobile." />
+			<div class="images-wrapper">
+				<img class="desktop" src="/assets/images/zeroplace-desktop.png" alt="Screenshot of ZeroPlace tenant dashboard on desktop." />
+				<img class="tablet" src="/assets/images/zeroplace-tablet.png" alt="Screenshot of ZeroPlace tenant dashboard on tablet." />
+				<img class="mobile" src="/assets/images/zeroplace-mobile.png" alt="Screenshot of ZeroPlace tenant dashboard on mobile." />
 			</div>
 		</section>
 	</section>
@@ -142,6 +165,10 @@
 		border-bottom: solid 1em lightsteelblue;
 	}
 
+	main {
+		overflow: hidden;
+	}
+
   .contact-info {
 		display: flex;
 		flex-direction: column;
@@ -157,6 +184,12 @@
 	nav {
 		display: none;
 		flex-direction: column;
+	}
+
+	.nav-link, .nav-link:hover, .nav-link:visited {
+		display: block;
+		color: #eac9ff;
+		text-decoration: none;
 	}
 
 	section {
@@ -187,29 +220,56 @@
 		border-right: solid 6.5em fuchsia;
 	}
 
-	section.screens {
-		margin-bottom: 5em
+	.screens {
+		margin-bottom: 5em;
 	}
 
-	img:first-child {
+	.screens img {
+		border: solid 0.5em #eac9ff;
+	}
+
+	.screens .desktop {
 		max-width: 100%;
 	}
 
-	img:nth-child(2) {
+	.screens .tablet {
 		max-width: 50%;
 	}
 
-	img:nth-child(3) {
+	.screens .mobile {
 		max-width: 25%;
 	}
 
 	@media screen and (min-width: 1200px) {
 		header {
 			flex-direction: row-reverse;
+			margin-top: 1em;
 		}
 
 		nav {
 			display: flex;
+			margin-right: 3%;
+			min-width: 13em;
+		}
+
+		nav h3 {
+			margin-bottom: 0.25em;
+		}
+
+		nav > .nav-link {
+			cursor: pointer;
+			padding-left: 1em;
+			margin-bottom: 1em;
+		}
+
+		nav > .nav-link:hover {
+			padding-left: 0.5em;
+			border-left: solid 0.5em #ffa6b4;
+		}
+
+		nav > .nav-link.active {
+			padding-left: 0.5em;
+			border-left: solid 0.5em #5fffa5;
 		}
 
 		.contact-info {
@@ -221,8 +281,12 @@
 		}
 
 		.content {
+			scroll-behavior: smooth;
 			display: flex;
 			flex-wrap: wrap;
+			height: 100%;
+			overflow-y: auto;
+			overflow-x: hidden;
 		}
 
 		.project-summary, .screens {
@@ -230,7 +294,32 @@
 		}
 
 		.project-summary {
+			margin-bottom: 5em;
 			margin-right: 5%;
+		}
+
+		.images-wrapper {
+			position: relative;
+			width: 90%;
+		}
+
+		.screens .desktop {
+			position: relative;
+		}
+
+		.screens .tablet {
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			transform: translateX(25%) translateY(80%);
+			max-width: 33.33%;
+		}
+
+		.screens .mobile {
+			position: absolute;
+			top: 110%;
+			right: 50%;
+			max-width: 15%;
 		}
 	}
 </style>
