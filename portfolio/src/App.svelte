@@ -229,7 +229,7 @@
 	}
 
 	.screens .desktop {
-		max-width: 100%;
+		max-width: 98%;
 	}
 
 	.screens .tablet {
