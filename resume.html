@@ -6,13 +6,6 @@
       -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
     }
 
-    .clearfix:after {
-      content: " ";
-      display: block;
-      height: 0;
-      clear: both;
-    }
-
     html {
       height: 100%;
     }
@@ -28,18 +21,25 @@
       /*letter-spacing: -1px;*/
     }
 
+    h3 {
+      color: #888;
+      font: 500 16px/8px 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      /*letter-spacing: -1px;*/
+      margin-top: 0;
+    }
+
     .variated-text {
-      color: #bababa;
+      color: #888;
     }
 
     .split-section {
       width: 800px;
       margin: auto;
       margin-top: 1rem;
+      display: flex;
     }
 
     .split-left {
-      display: inline-block;
       text-align: right;
       height: 100%;
       width: 26.4%;
@@ -50,7 +50,6 @@
     .split-right {
       font: 13px/13px 'HelveticaNeue', Helvetica, Arial, sans-serif;
       line-height: 1.3;
-      display: inline-block;
       width: 70%;
       border-left: 2px solid #cfcfcf;
       padding: 1rem;
@@ -63,8 +62,8 @@
     }
 
     .split-right li {
-      display: inline-block;
       font: 13px/13px 'HelveticaNeue', Helvetica, Arial, sans-serif;
+      margin: 1em 0;
     }
 
     .header {
@@ -76,13 +75,20 @@
       width: auto;
     }
 
+    #skill-section {
+      display: flex;
+    }
+
+    .skill-column {
+      margin: 0 1em;
+    }
+
     .skill-display {
       padding-bottom: 1%;
     }
 
     .skill-display label {
       display: inline-block;
-      float: left;
       text-align: right;
       width: 165px;
       padding-right: 1rem;
@@ -129,59 +135,61 @@
   <div class="split-section header">
     <label class="split-left"><h1>L.D Libra</h1></label>
     <div class="split-right">writeme@ldlibra.com</div>
-    <div class="split-right">218.821.1379</div>
-    <div class="split-right">Brooklyn, NY</div>
+    <div class="split-right">+46 73 782 7874</div>
+    <div class="split-right">Stockholm, Sweden</div>
   </div>
   <div class="split-section">
     <label class="split-left"><h2>Summary</h2></label>
-    <div class="split-right">I am an experienced software engineer with fullstack skill in web development and management experience. I love learning new things on a daily basis, and am eager to constantly grow. Communication and trust are important to me, so I ask for transparency from myself and others. I try to bring energy, focus, and accuracy to projects which I'm a part of, and greatly enjoy getting to know the people I'm working with.</div>
+    <div class="split-right">I am an experienced leader and software engineer with fullstack skill in web development and management experience. I love learning new things on a daily basis, and am eager to constantly grow. Communication and trust are important to me, so I ask for transparency from myself and others. I try to bring energy, focus, and accuracy to teams which I'm a part of, and greatly enjoy getting to know the people I'm working with.</div>
   </div>
   <div class="split-section">
     <label class="split-left"><h2>Skills</h2></label>
     <div id="skill-section" class="split-right">
-      <div class="skill-display clearfix">
-        <label>JAVASCRIPT</label>
-        <div class="level-bar" data-level="10"></div>
+      <div class="skill-column">
+        <h3>Backend</h3>
+        <ul>
+          <li>Golang</li>
+          <li>Java</li>
+          <li>Scala</li>
+          <li>Node.js</li>
+          <li>PHP</li>
+          <li>C/C++</li>
+        </ul>
       </div>
-      <div class="skill-display clearfix">
-        <label>GO</label>
-        <div class="level-bar" data-level="9"></div>
+      <div class="skill-column">
+        <h3>Frontend</h3>
+        <ul>
+          <li>Vanilla JS</li>
+          <li>HTML/CSS</li>
+          <li>ReactJS</li>
+          <li>Svelte</li>
+          <li>Vue</li>
+          <li>Figma</li>
+        </ul>
       </div>
-      <div class="skill-display clearfix">
-        <label>NODE.JS</label>
-        <div class="level-bar" data-level="9"></div>
+      <div class="skill-column">
+        <h3>DevOps</h3>
+        <ul>
+          <li>Linux</li>
+          <li>AWS</li>
+          <li>Kubernetes</li>
+          <li>MySQL</li>
+          <li>Postgres</li>
+          <li>Redis</li>
+          <li>Nginx</li>
+          <li>ElasticSearch</li>
+        </ul>
       </div>
-      <div class="skill-display clearfix">
-        <label>JAVA</label>
-        <div class="level-bar" data-level="9"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>HTML/CSS</label>
-        <div class="level-bar" data-level="9"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>UNIX/LINUX &amp; BASH</label>
-        <div class="level-bar" data-level="9"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>C/C++ (C preferred)</label>
-        <div class="level-bar" data-level="5"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>SQL</label>
-        <div class="level-bar" data-level="9"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>NOSQL</label>
-        <div class="level-bar" data-level="7"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>PERSONNEL MANAGEMENT</label>
-        <div class="level-bar" data-level="6"></div>
-      </div>
-      <div class="skill-display clearfix">
-        <label>PROJECT MANAGEMENT</label>
-        <div class="level-bar" data-level="6"></div>
+      <div class="skill-column">
+        <h3>Organization</h3>
+        <ul>
+          <li>Mentoring</li>
+          <li>Team Leadership & Management</li>
+          <li>Roadmap Creation and Maintenance</li>
+          <li>Strategy</li>
+          <li>Project Management</li>
+          <li>Product Management</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -189,9 +197,14 @@
     <label class="split-left"><h2>Experience</h2></label>
     <div class="split-right">
       <div class="experience-item">
+        <p>CHIEF TECHNICAL OFFICER</p>
+        <p class="variated-text">September 2021 - Present | Daymaker, US company, worked fully remote from Sweden</p>
+        <p>Managing all technical aspects of the company, ranging from hands-on implementation of major features and architecture to coordinating with external design teams to managing other engineers to building out our roadmap and much more. I'm heavily involved in planning and decision making, as well as mentoring other team members and execution of the fine details. The Daymaker stack: PHP on Laravel, React + Angular, Kubernetes on AWS via Amazon ECS</p>
+      </div>
+      <div class="experience-item">
         <p>FREELANCE SOFTWARE ENGINEER</p>
-        <p class="variated-text">March 2020 - Present | Various clients, Remote</p>
-        <p>See my portfolio for breakdowns of my recent work.</p>
+        <p class="variated-text">March 2020 - August 2021 | Various clients, worked fully remote</p>
+        <p>See my portfolio for breakdowns of my work: <a href="https://ldlibra.surge.sh">https://ldlibra.surge.sh</a></p>
       </div>
       <div class="experience-item">
         <p>SOFTWARE ENGINEER</p>

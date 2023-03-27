@@ -28,10 +28,10 @@
 	<div class="contact-info">
 		<span>L.D Libra</span>
 		<span>writeme@ldlibra.com</span>
-		<span>218.821.1379</span>
-		<span>Brooklyn, NY</span>
+		<span>+46 73 782 7874</span>
+		<span>Stockholm, Sweden</span>
 	</div>
-	<h1>RECENT PROJECTS - 2020</h1>
+	<h1>PROJECTS - 2020</h1>
 </header>
 <main>
 	<nav>
