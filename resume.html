@@ -55,7 +55,7 @@
       padding: 1rem;
     }
 
-    .split-right ul {
+    ul.no-ul-style {
       list-style: none;
       margin: 0;
       padding: 0;
@@ -93,13 +93,6 @@
       width: 165px;
       padding-right: 1rem;
       clear: left;
-    }
-
-    .level-bar {
-      display: inline-block;
-      background-color: #cfcfcf;
-      height: 10px;
-      width: 65%;
     }
 
     .experience-item {
@@ -147,7 +140,7 @@
     <div id="skill-section" class="split-right">
       <div class="skill-column">
         <h3>Backend</h3>
-        <ul>
+        <ul class="no-ul-style">
           <li>Golang</li>
           <li>Java</li>
           <li>Scala</li>
@@ -158,18 +151,20 @@
       </div>
       <div class="skill-column">
         <h3>Frontend</h3>
-        <ul>
+        <ul class="no-ul-style">
           <li>Vanilla JS</li>
+          <li>Data visualization</li>
           <li>HTML/CSS</li>
           <li>ReactJS</li>
           <li>Svelte</li>
           <li>Vue</li>
           <li>Figma</li>
+          <li>Responsiveness</li>
         </ul>
       </div>
       <div class="skill-column">
         <h3>DevOps</h3>
-        <ul>
+        <ul class="no-ul-style">
           <li>Linux</li>
           <li>AWS</li>
           <li>Kubernetes</li>
@@ -177,17 +172,18 @@
           <li>Postgres</li>
           <li>Redis</li>
           <li>Nginx</li>
+          <li>MongoDB</li>
           <li>ElasticSearch</li>
         </ul>
       </div>
       <div class="skill-column">
         <h3>Organization</h3>
-        <ul>
+        <ul class="no-ul-style">
           <li>Mentoring</li>
           <li>Team Leadership & Management</li>
+          <li>Project Management</li>
           <li>Roadmap Creation and Maintenance</li>
           <li>Strategy</li>
-          <li>Project Management</li>
           <li>Product Management</li>
         </ul>
       </div>
@@ -199,12 +195,19 @@
       <div class="experience-item">
         <p>CHIEF TECHNICAL OFFICER</p>
         <p class="variated-text">September 2021 - Present | Daymaker, US company, worked fully remote from Sweden</p>
-        <p>Managing all technical aspects of the company, ranging from hands-on implementation of major features and architecture to coordinating with external design teams to managing other engineers to building out our roadmap and much more. I'm heavily involved in planning and decision making, as well as mentoring other team members and execution of the fine details. The Daymaker stack: PHP on Laravel, React + Angular, Kubernetes on AWS via Amazon ECS</p>
+        <p>Daymaker serves a 2-sided market with 70+ company partners on one side buying gifts and experiences for children through our 70+ non-profit partners on the other. Our software sits in the middle, matching products from our catalog with children based on age, interests, and other factors, as well as managing all of the shipping process in our warehouse. I manage all technical aspects of the company, ranging from hands-on implementation of major features and architecture to coordinating with external design teams to managing other engineers to building out our roadmap and much more. I'm heavily involved in planning and decision making, as well as mentoring other team members and execution of the fine details. The Daymaker stack: PHP on Laravel, React + Angular, Kubernetes on AWS via Amazon ECS</p>
       </div>
       <div class="experience-item">
-        <p>FREELANCE SOFTWARE ENGINEER</p>
-        <p class="variated-text">March 2020 - August 2021 | Various clients, worked fully remote</p>
-        <p>See my portfolio for breakdowns of my work: <a href="https://ldlibra.surge.sh">https://ldlibra.surge.sh</a></p>
+        <p>CO-FOUNDER/SOFTWARE ENGINEER</p>
+        <p class="variated-text">March 2020 - December 2022 | Mage Hand, Various clients, worked fully remote</p>
+        <p>I went freelance in 2020 in preparation of my move to Sweden, then added a second engineer to found Mage Hand, a dev shop working on a wide range of projects across various industries and social causes. This work overlapped with my CTO role at Daymaker, which started as a contracted relationship then turned into a full-time role after Daymaker acqui-hired Mage Hand.</p>
+        <p>Some highlights I'm proud of:</p>
+        <ul>
+          <li>Built <a href="https://vera.motionforjustice.org">https://vera.motionforjustice.org</a> for the Vera Institute of Justice and Institute for Innovation in Prosecution in collaboration with Hyperakt, a social impact design studio. This site is an educational tool to equip prosecutors to tackle sorely needed prosecutorial reform in the fight against racial injustice.</li>
+          <li>Built an application for ZeroPlace (<a href="https://zeroplace.com">https://zeroplace.com</a>), an apartment building with the goal of reaching zero net emissions for energy usage. The app allows its tenants to monitor their own energy usage, building managers to track the energy usage and generation of all tenants and the building as a whole and administer tenant accounts, as well as a lobby display to show the building's solar generation vs average and total usage. This project involved integrating with on-site eGauge sensors for both electricity consumption/generation and water usage. (Actively used)</li>
+          <li>Built the MVP of Pollen, an app to succinctly inform voters of candidates' positions on many issues ahead of elections. (No longer actively used)</li>
+          <li>Built an interactive building-mapping tool in d3.js for Flume (<a href="https://www.flumeinternet.com/">https://www.flumeinternet.com</a>), a fiber-based ISP that offers free and discounted highspeed internet services to individuals eligible for federal assistance. This tool allows installation technicians to map out the networking equipment across an entire building in detail. (Actively used)</li>
+        </ul>
       </div>
       <div class="experience-item">
         <p>SOFTWARE ENGINEER</p>
@@ -254,29 +257,8 @@
     <div class="split-right">
       <p>BA, COMPUTER SCIENCE</p>
       <p class="variated-text">2008-2012 | Bethel University in St. Paul, Minnesota</p>
-      <p>Course work focused on object-oriented programming, Model-View-Controller, algorithmic prowess, proficiency with data structures, web development, and implementing a compiler. </p>
+      <p>Course work focused on object-oriented programming, Model-View-Controller, algorithmic prowess, proficiency with data structures, web development, and implementing a compiler in C++. </p>
     </div>
   </div>
-  <script type="text/javascript">
-    var skillDisplays = document.getElementById('skill-section').childNodes;
-    var barPercentWidth = document.documentElement.clientWidth > 540 ? 65 : 50;
-
-    function setBarWidths () {
-      for (var i = 0; i < skillDisplays.length; i++) {
-        if (skillDisplays[i].tagName !== 'DIV') continue;
-        var bar = skillDisplays[i].childNodes[3];
-        var level = parseInt(bar.getAttribute('data-level'));
-        bar.style.width = (level / 10 * barPercentWidth) + '%';
-      }
-    }
-    setBarWidths();
-    window.onresize = function () {
-      if (barPercentWidth === (document.documentElement.clientWidth > 540 ? 65 : 50)) {
-        return;
-      }
-      barPercentWidth = document.documentElement.clientWidth > 540 ? 65 : 50;
-      setBarWidths();
-    };
-  </script>
 </body>
 </html>
