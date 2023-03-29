@@ -6,26 +6,20 @@
       -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
     }
 
-    html {
-      height: 100%;
-    }
-
     h1 {
-      font: 900 26px/13px 'HelveticaNeue', Helvetica, Arial, sans-serif;
-      /*letter-spacing: -1px;*/
+      font: 900 26px/24px 'HelveticaNeue', Helvetica, Arial, sans-serif;
     }
 
     h2 {
       color: #888;
       font: 900 20px/10px 'HelveticaNeue', Helvetica, Arial, sans-serif;
-      /*letter-spacing: -1px;*/
     }
 
     h3 {
       color: #888;
       font: 500 16px/8px 'HelveticaNeue', Helvetica, Arial, sans-serif;
-      /*letter-spacing: -1px;*/
       margin-top: 0;
+      margin-bottom: 0.25em;
     }
 
     .variated-text {
@@ -55,15 +49,23 @@
       padding: 1rem;
     }
 
-    ul.no-ul-style {
+    ul.flex-wrap {
       list-style: none;
       margin: 0;
       padding: 0;
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .split-right li {
       font: 13px/13px 'HelveticaNeue', Helvetica, Arial, sans-serif;
-      margin: 1em 0;
+      flex-shrink: 0;
+      margin: 0.5em 0.5em;
+      padding: 0.5em 0;
+    }
+
+    ul.flex-wrap li {
+      border-bottom: solid 1px #cfcfcf;
     }
 
     .header {
@@ -75,12 +77,8 @@
       width: auto;
     }
 
-    #skill-section {
-      display: flex;
-    }
-
     .skill-column {
-      margin: 0 1em;
+      margin: 0 1em 2em 1em;
     }
 
     .skill-display {
@@ -99,14 +97,14 @@
       margin-bottom: 9%;
     }
 
-    @media (max-width: 800px) {
+    @media only screen and (max-width: 800px) {
 
-      .split-section, .split-right {
-        width: 100%;
+      .split-section {
+        flex-direction: column;
+        width: auto;
       }
 
       .split-left {
-        width: 100%;
         text-align: left;
         padding-left: 1rem;
       }
@@ -114,12 +112,6 @@
       .split-right {
         border-left: none;
         border-top: 2px #cfcfcf solid;
-      }
-    }
-
-    @media (max-width: 540px) {
-      .level-bar {
-        width: 50%;
       }
     }
   </style>
@@ -133,14 +125,14 @@
   </div>
   <div class="split-section">
     <label class="split-left"><h2>Summary</h2></label>
-    <div class="split-right">I am an experienced leader and software engineer with fullstack skill in web development and management experience. I love learning new things on a daily basis, and am eager to constantly grow. Communication and trust are important to me, so I ask for transparency from myself and others. I try to bring energy, focus, and accuracy to teams which I'm a part of, and greatly enjoy getting to know the people I'm working with.</div>
+    <div class="split-right">I am an experienced software engineer and leader with a diverse skillset. I love learning new things on a daily basis, and am eager to constantly grow. Communication and trust are important to me, so I ask for transparency from myself and others. I try to bring energy, focus, and accuracy to teams which I'm a part of, and greatly enjoy getting to know the people I'm working with.</div>
   </div>
   <div class="split-section">
     <label class="split-left"><h2>Skills</h2></label>
     <div id="skill-section" class="split-right">
       <div class="skill-column">
         <h3>Backend</h3>
-        <ul class="no-ul-style">
+        <ul class="flex-wrap">
           <li>Golang</li>
           <li>Java</li>
           <li>Scala</li>
@@ -151,9 +143,9 @@
       </div>
       <div class="skill-column">
         <h3>Frontend</h3>
-        <ul class="no-ul-style">
+        <ul class="flex-wrap">
           <li>Vanilla JS</li>
-          <li>Data visualization</li>
+          <li>Data Visualization</li>
           <li>HTML/CSS</li>
           <li>ReactJS</li>
           <li>Svelte</li>
@@ -164,7 +156,9 @@
       </div>
       <div class="skill-column">
         <h3>DevOps</h3>
-        <ul class="no-ul-style">
+        <ul class="flex-wrap">
+          <li>System Architecture</li>
+          <li>Performance Tuning</li>
           <li>Linux</li>
           <li>AWS</li>
           <li>Kubernetes</li>
@@ -178,7 +172,7 @@
       </div>
       <div class="skill-column">
         <h3>Organization</h3>
-        <ul class="no-ul-style">
+        <ul class="flex-wrap">
           <li>Mentoring</li>
           <li>Team Leadership & Management</li>
           <li>Project Management</li>
@@ -200,11 +194,11 @@
       <div class="experience-item">
         <p>CO-FOUNDER/SOFTWARE ENGINEER</p>
         <p class="variated-text">March 2020 - December 2022 | Mage Hand, Various clients, worked fully remote</p>
-        <p>I went freelance in 2020 in preparation of my move to Sweden, then added a second engineer to found Mage Hand, a dev shop working on a wide range of projects across various industries and social causes. This work overlapped with my CTO role at Daymaker, which started as a contracted relationship then turned into a full-time role after Daymaker acqui-hired Mage Hand.</p>
+        <p>I went freelance in 2020 in preparation for my move to Sweden, then added a second engineer to found Mage Hand, a dev shop working on a wide range of projects across various industries and social causes. This work overlapped with my CTO role at Daymaker, which started as a contracted relationship then turned into a full-time role after Daymaker acqui-hired Mage Hand.</p>
         <p>Some highlights I'm proud of:</p>
         <ul>
-          <li>Built <a href="https://vera.motionforjustice.org">https://vera.motionforjustice.org</a> for the Vera Institute of Justice and Institute for Innovation in Prosecution in collaboration with Hyperakt, a social impact design studio. This site is an educational tool to equip prosecutors to tackle sorely needed prosecutorial reform in the fight against racial injustice.</li>
-          <li>Built an application for ZeroPlace (<a href="https://zeroplace.com">https://zeroplace.com</a>), an apartment building with the goal of reaching zero net emissions for energy usage. The app allows its tenants to monitor their own energy usage, building managers to track the energy usage and generation of all tenants and the building as a whole and administer tenant accounts, as well as a lobby display to show the building's solar generation vs average and total usage. This project involved integrating with on-site eGauge sensors for both electricity consumption/generation and water usage. (Actively used)</li>
+          <li>Built <a href="https://vera.motionforjustice.org">https://vera.motionforjustice.org</a> for the Vera Institute of Justice and Institute for Innovation in Prosecution in collaboration with Hyperakt, a social impact design studio. This site is an educational tool to equip prosecutors to tackle sorely-needed prosecutorial reform in the fight against racial injustice.</li>
+          <li>Built an application for ZeroPlace (<a href="https://zeroplace.com">https://zeroplace.com</a>), a solar-panel-equipped apartment building with the goal of reaching zero net emissions for energy usage. The app allows its tenants to monitor their own energy usage, building managers to track the energy usage and generation of all tenants and the building as a whole and administer tenant accounts, as well as a lobby display to show the building's solar generation vs average and total usage. This project involved integrating with on-site eGauge sensors for both electricity consumption/generation and water usage. (Actively used)</li>
           <li>Built the MVP of Pollen, an app to succinctly inform voters of candidates' positions on many issues ahead of elections. (No longer actively used)</li>
           <li>Built an interactive building-mapping tool in d3.js for Flume (<a href="https://www.flumeinternet.com/">https://www.flumeinternet.com</a>), a fiber-based ISP that offers free and discounted highspeed internet services to individuals eligible for federal assistance. This tool allows installation technicians to map out the networking equipment across an entire building in detail. (Actively used)</li>
         </ul>
